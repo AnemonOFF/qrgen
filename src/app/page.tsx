@@ -1,5 +1,6 @@
 "use client";
 
+import BarcodeGenerator from "@/components/BarcodeGenerator";
 import QrGenerator from "@/components/QrGenerator";
 import { Textarea, Input } from "@nextui-org/input";
 import { Select, SelectItem } from "@nextui-org/select";
@@ -15,8 +16,8 @@ export default function Home() {
   const [margin, setMargin] = useState(4);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex gap-5 w-full max-lg:flex-col max-w-[800px]">
+    <main className="flex min-h-screen flex-col items-center gap-5 justify-between p-12">
+      <div className="flex gap-5 w-full max-lg:flex-col max-lg:items-center max-w-[800px]">
         <div className="flex flex-col gap-5 grow">
           <Textarea
             label="Текст для кодирования"
@@ -115,6 +116,7 @@ export default function Home() {
           }
         />
       </div>
+      <BarcodeGenerator text={text} />
     </main>
   );
 }
